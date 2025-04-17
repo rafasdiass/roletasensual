@@ -34,6 +34,28 @@
     color: #c2185b;
 }
 
+/** Animação de destaque sensual */
+.animated-highlight {
+    animation: pop-in 1.2s ease-out forwards;
+}
+
+/** Keyframes da animação */
+@keyframes pop-in {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    60% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 .start-btn {
     margin-top: 1rem;
     font-size: 1.2rem;
