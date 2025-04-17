@@ -1,0 +1,17 @@
+<div class="history-container">
+    <h2>Histórico de Rodadas</h2>
+    <ul class="history-list">
+        <li *ngFor="let turn of history; index as i" class="history-item">
+            <span class="round-label">R{{ i + 1 }}:</span>
+            <span *ngIf="turn.type === 'question'">
+                Pergunta — <em>{{ turn.content }}</em>
+            </span>
+            <span *ngIf="turn.type === 'forfeit'">
+                Prenda — <strong>{{ turn.content }}</strong>
+            </span>
+            <span class="status">
+                ({{ turn.answered ? 'Respondida' : 'Cumprida' }})
+            </span>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center gap-3">
+    <button (click)="onAnswer()" [disabled]="isUsed" class="btn btn-outline-success btn-lg d-flex align-items-center">
+        <i class="bi bi-chat-dots-fill me-2"></i>
+        Eu Respondo
+    </button>
+    <button (click)="onForfeit()" [disabled]="isUsed" class="btn btn-outline-danger btn-lg d-flex align-items-center">
+        <i class="bi bi-gift-fill me-2"></i>
+        Pago Prenda
+    </button>
+</div>

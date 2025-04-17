@@ -1,0 +1,18 @@
+.choice-card {
+    max-width: 360px;
+    background-color: #fff !important;
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+}

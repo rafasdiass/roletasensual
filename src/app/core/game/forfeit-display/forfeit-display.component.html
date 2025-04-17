@@ -1,0 +1,10 @@
+<div class="forfeit-container">
+    <p class="forfeit-text">{{ forfeitText }}</p>
+    <div class="countdown">
+        <span *ngIf="!isCountdownOver">Tempo restante: {{ remainingTime }}s</span>
+        <span *ngIf="isCountdownOver">Pronto!</span>
+    </div>
+    <button (click)="onCompleteClick()" [disabled]="!isCountdownOver" class="complete-btn">
+        Concluído
+    </button>
+</div>

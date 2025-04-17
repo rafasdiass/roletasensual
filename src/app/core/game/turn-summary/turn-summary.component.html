@@ -1,0 +1,21 @@
+<div class="summary-container text-center p-4 bg-white rounded shadow-sm">
+    <h2 class="mb-3 text-danger">
+        <i class="bi bi-flag-fill me-2"></i>
+        Rodada {{ currentRound }}/{{ totalRounds }}
+    </h2>
+
+    <p *ngIf="result.type === 'question'" class="lead text-success">
+        <i class="bi bi-question-circle-fill me-2"></i>
+        Pergunta respondida
+    </p>
+
+    <p *ngIf="result.type === 'forfeit'" class="lead text-warning">
+        <i class="bi bi-exclamation-triangle-fill me-2"></i>
+        Prenda cumprida: <strong>{{ result.content }}</strong>
+    </p>
+
+    <button (click)="onNext()" class="btn btn-primary mt-3">
+        <i class="bi bi-arrow-right-circle me-2"></i>
+        Próximo Turno
+    </button>
+</div>

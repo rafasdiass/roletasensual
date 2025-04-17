@@ -1,0 +1,10 @@
+<div class="d-flex flex-column align-items-center my-4">
+    <div class="roleta-display d-flex justify-content-center align-items-center rounded-circle shadow border border-3 border-danger"
+        [class.spinning]="isSpinning">
+        {{ displayedLabel }}
+    </div>
+    <button class="btn btn-danger mt-3" (click)="spin()" [disabled]="isSpinning">
+        <i class="bi bi-arrow-clockwise me-2"></i>
+        Girar
+    </button>
+</div>

@@ -1,0 +1,44 @@
+.game-container {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #ffdde1 0%, #ee9ca7 100%);
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.turn-header {
+    h4 {
+        font-size: 2rem;
+        color: #c2185b;
+        font-weight: bold;
+        text-shadow: 1px 2px 5px rgba(0, 0, 0, 0.25);
+        margin-bottom: 1rem;
+    }
+}
+
+.stage-container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.history-section {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-top: 2px solid #f48fb1;
+}
+
+@media (max-width: 768px) {
+    .turn-header h4 {
+        font-size: 1.5rem;
+    }
+
+    .stage-container {
+        min-height: 300px;
+    }
+}

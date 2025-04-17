@@ -1,0 +1,10 @@
+<div class="card choice-card mx-auto text-center p-3 shadow-sm">
+    <div class="card-body">
+        <h3 class="card-title text-danger mb-4">
+            <i class="bi bi-person-fill me-2"></i>
+            {{ label }}, pergunta ou paga?
+        </h3>
+
+        <app-option-buttons (answered)="onQuestion()" (forfeit)="onForfeit()"></app-option-buttons>
+    </div>
+</div>

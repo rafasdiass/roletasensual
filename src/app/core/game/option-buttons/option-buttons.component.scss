@@ -1,0 +1,20 @@
+:host {
+    display: block;
+    margin-top: 1rem;
+
+    .btn {
+        flex: 1;
+        font-weight: 500;
+        border-width: 2px;
+
+        &:not(:disabled):hover {
+            transform: scale(1.05);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        &:disabled {
+            opacity: 0.6;
+            cursor: default;
+        }
+    }
+}

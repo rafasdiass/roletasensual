@@ -1,0 +1,12 @@
+<div class="question-container card shadow-sm p-4 text-center">
+    <!-- Ícone animado de coração -->
+    <div class="heartbeat-icon mb-4">
+        <i class="bi bi-heart-fill pulse-animation text-danger"></i>
+    </div>
+
+    <!-- Pergunta -->
+    <p class="question-text lead mb-4">{{ questionText }}</p>
+
+    <!-- Botões de Ação -->
+    <app-option-buttons (answered)="onAnswered()" (forfeit)="onForfeit()"></app-option-buttons>
+</div>

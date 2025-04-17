@@ -1,0 +1,55 @@
+<main class="container game-container d-flex flex-column">
+    <!-- Cabeçalho -->
+    <div class="turn-header text-center my-3">
+        <h4 class="fw-bold text-danger">
+            <i class="bi bi-flag-fill me-2"></i>
+            Rodada {{ currentRound }} de {{ totalRounds }}
+        </h4>
+    </div>
+
+    <!-- Área principal -->
+    <div class="stage-container flex-grow-1 d-flex justify-content-center align-items-center">
+        <ng-container [ngSwitch]="stage">
+
+            <!-- Roleta (Sorteia jogador) -->
+            <div *ngSwitchCase="'spin'" class="d-flex flex-column align-items-center">
+                <app-roleta (playerSelected)="handlePlayerSelected($event)"></app-roleta>
+            </div>
+
+            <!-- Escolha: Pergunta ou Prenda -->
+            <div *ngSwitchCase="'choice'" class="w-100 d-flex justify-content-center">
+                <app-player-choice [player]="selectedPlayer" (chooseQuestion)="handleChoiceQuestion()"
+                    (chooseForfeit)="handleChoiceForfeit()"></app-player-choice>
+            </div>
+
+            <!-- Exibe Pergunta -->
+            <div *ngSwitchCase="'question'" class="w-100 d-flex justify-content-center">
+                <app-question-display [questionText]="questionText" (answered)="handleAnswer()"
+                    (forfeit)="handleChoiceForfeit()" (hesitated)="handleHesitation()"></app-question-display>
+            </div>
+
+            <!-- Exibe Prenda -->
+            <div *ngSwitchCase="'forfeit'" class="w-100 d-flex justify-content-center">
+                <app-forfeit-display [forfeitText]="forfeitText" [durationSeconds]="30"
+                    (completed)="handleForfeitComplete()"></app-forfeit-display>
+            </div>
+
+            <!-- Resumo da Rodada -->
+            <div *ngSwitchCase="'summary'" class="d-flex flex-column align-items-center">
+                <app-turn-summary [result]="summaryResult" [currentRound]="currentRound" [totalRounds]="totalRounds"
+                    (nextTurn)="handleNextTurn()"></app-turn-summary>
+            </div>
+
+            <!-- Tela de Game Over -->
+            <div *ngSwitchCase="'gameOver'" class="w-100 d-flex justify-content-center">
+                <app-game-over (restartGame)="handleRestart()" (backToStart)="handleBackToStart()"></app-game-over>
+            </div>
+
+        </ng-container>
+    </div>
+
+    <!-- Histórico de Turnos -->
+    <div class="history-section mt-4" *ngIf="stage !== 'gameOver'">
+        <app-history [history]="history"></app-history>
+    </div>
+</main>
